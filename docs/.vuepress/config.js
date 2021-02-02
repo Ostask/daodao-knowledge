@@ -6,26 +6,27 @@ module.exports = {
     description: '立志不再懒懒散散的小前端的知识库',
     themeConfig: {
         logo: '/img/home.jpg',
+        sidebarDepth:2,
         nav: [
             { text: '主页', link: '/' },
             {text: '前端学习',
                 items: [
-                    { 
-                        text: '基础',
-                        items:[
-                            {text:'es6',link:'/es6/'},
-                            {text:'ts',link:'/'},
-                            {text:'nodejs',link:'/'},
-                            {text:'css',link:'/'}
-                        ]
-                    },
+                    // { 
+                    //     text: '基础',
+                    //     items:[
+                    //         {text:'es6',link:'/es6/'},
+                    //         {text:'ts',link:'/'},
+                    //         {text:'nodejs',link:'/'},
+                    //         {text:'css',link:'/'}
+                    //     ]
+                    // },
                     { 
                         text: '框架学习',
                         items:[
-                            {text:'vue',link:'/vue/lesson1'},
-                            {text:'react',link:'/'},
-                            {text:'vuePress',link:'/'},
-                            {text:'qiankun微前端',link:'/'}
+                            // {text:'vue',link:'/vue/lesson1'},
+                            // {text:'react',link:'/'},
+                            // {text:'vuePress',link:'/pages/347ae3/'},
+                            {text:'qiankun微前端',link:'/pages/347ae3/'}
                         ]
                     },
                 ]

@@ -124,7 +124,7 @@ function getFileOrFolder(root,path){
     foders.forEach(folder => {
       arr.push({
         title:folder,
-        sidebarDepth: 1,    // 可选的, 默认值是 1
+        sidebarDepth: 2,    // 可选的, 默认值是 1
         children:getFileOrFolder(root,path+"/"+folder)
       })
     })
