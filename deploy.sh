@@ -16,6 +16,8 @@ git init
 git add -A
 git commit -m 'deploy'
 
+git config --global user.name "Ostask"
+git config --global user.email "502724802@qq.com"
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
