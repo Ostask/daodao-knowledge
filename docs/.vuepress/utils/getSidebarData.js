@@ -121,13 +121,23 @@ function getFileOrFolder(root,path){
   if(foders.length > 0){
     foders.forEach(folder => {
       arr.push({
-        title:folder,
+        title:filterNumber(folder),
         sidebarDepth: 2,    // 可选的, 默认值是 1
         children:getFileOrFolder(root,path+"/"+folder)
       })
     })
   }
   return arr
+}
+
+/**
+ * 过滤字符串中的数字
+ * @param {字符串} str 
+ */
+function filterNumber(str){
+  const ret = /^[0-9]+./
+  let txt = str.replace(ret,"")
+  return txt
 }
 
 genSideBar()
