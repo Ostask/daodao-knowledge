@@ -2,8 +2,6 @@ const fs = require("fs");
 
 const path = require("path");
 
-const rootpath = path.dirname(__dirname);
-
 /**
 * string比较工具类
 */
