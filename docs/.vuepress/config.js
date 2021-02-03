@@ -31,6 +31,7 @@ module.exports = {
                     },
                 ]
             },
+            { text: '零零碎碎',link:'/pages/cd2a4f/'},
             { text: '随记', link: '/' },
             { text: '大佬文章转载', link: '/' },
             { text: '大佬博客链接', link: '/' },
