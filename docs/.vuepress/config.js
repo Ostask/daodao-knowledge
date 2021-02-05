@@ -4,9 +4,13 @@ module.exports = {
     title: '刀刀的知识积累',
     base:'/daodao-knowledge/',
     description: '立志不再懒懒散散的小前端的知识库',
+    markdown:{
+        lineNumbers:true,
+    },
     themeConfig: {
         logo: '/img/home.jpg',
         sidebarDepth:2,
+        footer: "MIT Licensed | Copyright © 2021-present 刀刀",   
         nav: [
             { text: '主页', link: '/' },
             {text: '前端学习',
