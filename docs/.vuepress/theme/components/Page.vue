@@ -36,8 +36,7 @@ export default {
   },
   methods:{
     isArticle(){
-      return true
-      //return this.$frontmatter.article !== false
+      return this.$frontmatter.article !== false
     }
   }
 }
