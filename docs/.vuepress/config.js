@@ -8,6 +8,10 @@ module.exports = {
         lineNumbers:true,
     },
     themeConfig: {
+        repo: 'Ostask/daodao-knowledge', // Github仓库地址
+        docsDir: 'docs', // .md文件放在了docs目录下
+        editLinks: true, // 启用编辑链接
+        editLinkText: '编辑',
         logo: '/img/home.jpg',
         sidebarDepth:2,
         footer: "MIT Licensed | Copyright © 2021-present 刀刀",   
