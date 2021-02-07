@@ -1,16 +1,22 @@
 <template>
     <div class="article-title theme-default-content">
         <h1><span class="circle"></span>{{title}}</h1>
-        <div class="lastUpdatedTime"><span class="text">更新时间:</span> {{lastUpdated}}</div>
+        <div class="lastUpdatedTime" v-if="showTime"><span class="text">更新时间:</span> {{lastUpdated}}</div>
     </div>
 </template>
 
 <script>
 import {filterDateTime } from '../util'
 export default {
+    props:{
+        showTime:{
+            type:Boolean,
+            default:true
+        }
+    },
     computed:{
         lastUpdated () {
-            return filterDateTime(this.$frontmatter.date) || filterDateTime(this.$page.lastUpdated)
+            return filterDateTime(this.$frontmatter.date).time || filterDateTime(this.$page.lastUpdated).time
         },
         title(){
             return this.$page.title

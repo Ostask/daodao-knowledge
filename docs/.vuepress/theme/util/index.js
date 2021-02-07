@@ -247,15 +247,35 @@ function resolveItem (item, pages, base, groupDepth = 1) {
  * 刀刀加的，转换时间格式
  */
 export function filterDateTime(datetime){
-  datetime = datetime.replace("Z","")
-  const date = new Date(datetime)
-  let year = date.getFullYear()
-  let month = ("0" + (date.getMonth() + 1)).slice(-2)
-  let sdate = ("0" + date.getDate()).slice(-2)
-  let hour = ("0" + date.getHours()).slice(-2)
-  let minute = ("0" + date.getMinutes()).slice(-2)
-  let second = ("0" + date.getSeconds()).slice(-2)
-  // 拼接
-  let result = year + "-"+ month +"-"+ sdate +" "+ hour +":"+ minute +":" + second;
-  return result
+  if(datetime){
+    datetime = datetime.replace("Z","")
+    const sdate = new Date(datetime)
+    let year = sdate.getFullYear()
+    let month = ("0" + (sdate.getMonth() + 1)).slice(-2)
+    let date = ("0" + sdate.getDate()).slice(-2)
+    let hour = ("0" + sdate.getHours()).slice(-2)
+    let minute = ("0" + sdate.getMinutes()).slice(-2)
+    let second = ("0" + sdate.getSeconds()).slice(-2)
+    // 拼接
+    let result = year + "-"+ month +"-"+ date +" "+ hour +":"+ minute +":" + second;
+    return {
+      year,
+      month,
+      date,
+      hour,
+      minute,
+      second,
+      time:result
+    }
+  }else{
+    return {
+      time:'',
+      year:'',
+      month:'',
+      date:'',
+      hour:'',
+      minute:'',
+      second:'',
+    }
+  }
 }

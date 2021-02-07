@@ -1,6 +1,7 @@
 <template>
   <main class="page">
     <slot name="top" />
+
     <articleTitle v-if="isArticle"></articleTitle>
     <Content class="theme-default-content" />
     <PageEdit />
@@ -32,12 +33,13 @@ export default {
     themeConfig () {
       console.log(this.$site)
       return this.$site.themeConfig
-    }
-  },
-  methods:{
+    },
     isArticle(){
       return this.$frontmatter.article !== false
     }
+  },
+  methods:{
+    
   }
 }
 </script>

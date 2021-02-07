@@ -6,6 +6,8 @@
     font-size 0.85em
     background-color rgba(27,31,35,0.05)
     border-radius 3px
+    ::selected
+      background #fff
     .token
       &.deleted
         color #EC5975
@@ -39,7 +41,7 @@ div[class*="language-"]
     width 100%
     line-height 1.4
     .highlighted
-      background-color rgba(0, 0, 0, 66%)
+      background-color rgba(171, 227, 253, 66%)
   pre, pre[class*="language-"]
     background transparent
     position relative
@@ -50,7 +52,7 @@ div[class*="language-"]
     top 0.8em
     right 1em
     font-size 0.75rem
-    color rgba(255, 255, 255, 0.4)
+    color $textColor
   &:not(.line-numbers-mode)
     .line-numbers-wrapper
       display none
@@ -66,7 +68,7 @@ div[class*="language-"]
           display block
           width $lineNumbersWrapperWidth
           height 100%
-          background-color rgba(0, 0, 0, 66%)
+          background-color rgba(171, 227, 253, 66%)
     pre
       padding-left $lineNumbersWrapperWidth + 1 rem
       vertical-align middle

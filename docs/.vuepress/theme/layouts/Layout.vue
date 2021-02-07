@@ -29,6 +29,8 @@
 
     <Home v-if="$page.frontmatter.home" />
 
+    <ArchivesPage v-else-if="$page.frontmatter.archivesPage" />
+
     <Page
       v-else
       :sidebar-items="sidebarItems"
@@ -45,6 +47,7 @@
 
 <script>
 import Home from '@theme/components/Home.vue'
+import ArchivesPage from '@theme/components/ArchivesPage.vue'
 import Navbar from '@theme/components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
@@ -55,6 +58,7 @@ export default {
 
   components: {
     Home,
+    ArchivesPage,
     Page,
     Sidebar,
     Navbar

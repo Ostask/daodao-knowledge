@@ -79,8 +79,6 @@ const filehelper = {
   getAllDirs: function getAllDirs(mypath = "docs") {
     const items = fs.readdirSync(mypath);
 
-    console.log(items)
-
     let result = []
 
       // 遍历当前目录中所有文件夹
