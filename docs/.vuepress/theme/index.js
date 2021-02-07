@@ -26,6 +26,7 @@ module.exports = (options, ctx) => {
     plugins: [
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/search',
+      '@vuepress/medium-zoom',
       '@vuepress/plugin-nprogress',
       ['container', {
         type: 'tip',
