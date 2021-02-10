@@ -13,5 +13,8 @@
   "devDependencies": {
     "@vuepress/plugin-medium-zoom": "^1.8.0",
     "vuepress": "^1.8.0"
+  },
+  "dependencies": {
+    "three": "^0.125.2"
   }
 }
