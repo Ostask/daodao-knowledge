@@ -105,6 +105,7 @@ function renderExternal (h, to, text) {
 .sidebar .sidebar-sub-headers
   padding-left 1rem
   font-size 0.95em
+  display none
 
 a.sidebar-link
   font-size 1em
@@ -130,4 +131,7 @@ a.sidebar-link
     border-left none
     &.active
       font-weight 500
+ @media (max-width:1250px)
+   .sidebar .sidebar-sub-headers
+      display block   
 </style>

@@ -10,7 +10,7 @@ categories:
 tags:
   - 
 ---
-最近我在学threejs，希望能够集成threejs，首先我尝试在vuepress中使用vue组件，然后在vue组件中使用three，结果如下，大成功！和普通的使用vue一样。
+最近我在学threejs，希望能够集成threejs，首先我尝试在vuepress中使用vue组件，然后在vue组件中使用three，结果如下，大成功！和普通的使用vue一样。很简单，感觉没什么好写的，来看下效果：
 <style lang="stylus" scoped>
     #myThree{
         width:800px;
@@ -28,7 +28,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 export default {
     data() {
         return {
-            gui:"a"
+            gui:null
         }
     },
     mounted(){
