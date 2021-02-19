@@ -24,10 +24,9 @@ function setFrontmatter (sourceDir, themeConfig) {
 
         //fileMatterObj => {content:'剔除frontmatter后的文件内容字符串'，data：{<frontmatter对象>}，。。。}
         const fileMatterObj = matter(dataStr)
-        log(fileMatterObj)
 
         if(Object.keys(fileMatterObj.data).length === 0){ //未定义FrontMatter数据
-            const stat = fs.stasSync(file.filePath)
+            const stat = fs.statSync(file.filePath)
             const dateStr = dateFormat(getBirthtime(stat)) //文件的创建时间
             const categories = getCategories(file,categoryText)
 
@@ -38,6 +37,66 @@ function setFrontmatter (sourceDir, themeConfig) {
 
             let cateStr = ''
             
+            if(!(isCategory === false)){
+                cateStr = '\r\ncategories:' + cateLabelStr
+            }
+
+            const tagsStr = isTag === false ? '': `
+tags:
+    -`
+            const fmData = `---
+title: ${file.name}
+date: ${dateStr}
+permalink: ${getPermalink()}${file.filePath.indexOf('_posts') > -1 ? '\r\nsidebar: auto' : ''}${cateStr}${tagsStr}
+---`; 
+            fs.writeFileSync(file.filePath, `${fmData}\r\n${fileMatterObj.content}`); // 写入
+            log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
+        }else { // 已有FrontMatter
+            const matterData = fileMatterObj.data;
+            let mark = false;
+      
+            // 已有FrontMatter，但是没有title、date、permalink、categories、tags数据的
+            if (!matterData.hasOwnProperty('title')) { // 标题
+              matterData.title = file.name;
+              mark = true;
+            }
+      
+            if (!matterData.hasOwnProperty('date')) { // 日期
+              const stat = fs.statSync(file.filePath);
+              matterData.date = dateFormat(getBirthtime(stat));
+              mark = true;
+            }
+      
+            if (!matterData.hasOwnProperty('permalink')) { // 永久链接
+              matterData.permalink = getPermalink();
+              mark = true;
+            }
+      
+            if (file.filePath.indexOf('_posts') > -1 && !matterData.hasOwnProperty('sidebar')) { // auto侧边栏，_posts文件夹特有
+              matterData.sidebar = "auto";
+              mark = true;
+            }
+      
+            if (!matterData.hasOwnProperty('pageComponent') && matterData.article !== false) { // 是文章页才添加分类和标签
+              if (isCategory !== false && !matterData.hasOwnProperty('categories')) { // 分类
+                matterData.categories = getCategories(file, categoryText)
+                mark = true;
+              }
+      
+              if (isTag !== false && !matterData.hasOwnProperty('tags')) { // 标签
+                matterData.tags = [''];
+                mark = true;
+              }
+            }
+      
+            if (mark) {
+              if (matterData.date && type(matterData.date) === 'date') {
+                matterData.date = repairDate(matterData.date) // 修复时间格式
+              }
+              const newData = jsonToYaml.stringify(matterData).replace(/\n\s{2}/g, "\n").replace(/"/g, "") + '---\r\n' + fileMatterObj.content;
+              fs.writeFileSync(file.filePath, newData); // 写入
+              log(chalk.blue('tip ') + chalk.green(`write frontmatter(写入frontmatter)：${file.filePath} `))
+            }
         }
     })
 }
