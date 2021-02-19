@@ -19,15 +19,15 @@ module.exports = {
             { text: '主页', link: '/' },
             {text: '前端学习',
                 items: [
-                    // { 
-                    //     text: '基础',
-                    //     items:[
-                    //         {text:'es6',link:'/es6/'},
-                    //         {text:'ts',link:'/'},
-                    //         {text:'nodejs',link:'/'},
-                    //         {text:'css',link:'/'}
-                    //     ]
-                    // },
+                    { 
+                        text: '基础',
+                        items:[
+                            {text:'javascript',link:'/pages/600fd9/'},
+                            // {text:'ts',link:'/'},
+                            // {text:'nodejs',link:'/'},
+                            // {text:'css',link:'/'}
+                        ]
+                    },
                     { 
                         text: '框架学习',
                         items:[

@@ -1,7 +1,7 @@
 ---
 title: 集成three.js(vue组件形式)
 date: 2021-02-10 14:04:34
-permalink: /pages/dagaga/
+permalink: /pages/1fasf2/
 author: 
   name: Ostask
   link: https://github.com/Ostask
