@@ -1,8 +1,13 @@
 const path = require('path')
+const setFrontmatter = require('./util/setFrontmatter')
 
 // Theme API.
 module.exports = (options, ctx) => {
-  const { themeConfig, siteConfig } = ctx
+  const { sourceDir, themeConfig, siteConfig } = ctx
+
+  // 自动设置front matter
+  setFrontmatter(sourceDir, themeConfig)
+
 
   // resolve algolia
   const isAlgoliaSearch = (
