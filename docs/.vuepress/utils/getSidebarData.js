@@ -34,7 +34,20 @@ const str = {
 
     return false;
 
-  }
+  },
+  startAt: function (string, substr, isIgnoreCase) {
+    if (isIgnoreCase) {
+      string = string.toLowerCase();
+      substr = substr.toLowerCase();
+    }
+
+    if(string.startsWith(substr)){
+      return true
+    }
+
+    return false;
+
+  },
 
 };
 
@@ -88,7 +101,7 @@ const filehelper = {
 
         // 过滤无关的文件夹
 
-        if ( fs.statSync(temp).isDirectory() && !item.startsWith(".") && !str.contains(item, "DS_Store", true)) {
+        if ( fs.statSync(temp).isDirectory() && !item.startsWith(".") && !str.contains(item, "DS_Store", true) && !str.startAt(item,"@",true)) {
           let path = item;
           result.push(path)
         }

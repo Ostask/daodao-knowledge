@@ -37,6 +37,12 @@ module.exports = {
                             {text:'qiankun微前端',link:'/pages/347ae3/'}
                         ]
                     },
+                    {
+                        text:'webgl学习',
+                        items:[
+                            {text:'threejs',link:'/pages/22d756/'}
+                        ]
+                    }
                 ]
             },
             { text: '零零碎碎',link:'/pages/cd2a4f/'},
@@ -46,7 +52,7 @@ module.exports = {
                     {text:'归档',link:'/archives/'},
                 ]
             },
-            { text: '大佬文章转载', link: '/' }
+            { text: '大佬博客收藏', link: '/dalao/' }
         ],
         sidebar:sidebar
     }
