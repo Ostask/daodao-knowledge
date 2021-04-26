@@ -40,7 +40,7 @@ module.exports = {
                     {
                         text:'webgl学习',
                         items:[
-                            {text:'threejs',link:'/pages/22d756/'}
+                            {text:'threejs',link:'/pages/7fb7ad/'}
                         ]
                     }
                 ]
