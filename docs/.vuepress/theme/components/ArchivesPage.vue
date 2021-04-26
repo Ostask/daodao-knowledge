@@ -6,9 +6,11 @@
             <!-- 循环出归档的列表 -->
             <div class="year-content" v-for="yearobj in list">
                 <div class="year">{{yearobj.year}}</div>
-                <router-link tag="li" :to="item.path" v-for="item in yearobj.articles" class="article">
-                    <span class="time">{{item.time}}</span>{{item.title}}
-                </router-link>
+                <div class="list-wrapper">
+                    <router-link tag="li" :to="item.path" v-for="item in yearobj.articles" class="article">
+                        <span class="time">{{item.time}}</span>{{item.title}}
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -81,15 +83,23 @@ export default {
             font-size 2rem
             color $accentColor
         }
-        .article{
-            list-style none
-            line-height 1.8rem
-            cursor pointer
-            .time{
-                margin-right 1rem
-            }
-            &:hover{
-                color $accentColor
+        .list-wrapper{
+            display :flex;
+            flex-wrap:wrap;
+            .article{
+                list-style none
+                width:50%;
+                line-height 1.8rem
+                cursor pointer
+                .time{
+                    margin-right 1rem
+                }
+                &:hover{
+                    color $accentColor
+                }
+                @media (max-width:700px){
+                    width:100%;
+                }
             }
         }
     }
