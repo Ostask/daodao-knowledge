@@ -57,6 +57,7 @@ export function initCamera(domEl,initialPosition) {
     var position = (initialPosition !== undefined) ? initialPosition : new THREE.Vector3(-30,40,30)
 
     var camera = new THREE.PerspectiveCamera(45, domEl.clientWidth / domEl.clientHeight, 0.1, 1000)
+    camera.position.set(position.x,position.y,position.z)
     camera.lookAt(new THREE.Vector3(0,0,0))
 
     return camera
@@ -129,4 +130,33 @@ export function addGroundPlane(scene){
 
     scene.add(plane)
     return plane
+}
+
+export function setRandomColors(object,scale) {
+    var children = object.children
+    if(children && children.length > 0){
+        children.forEach(function(e) {
+            setRandomColors(e,scale)
+        })
+    }else{
+        if(object instanceof THREE.Mesh) {
+            if(object.material instanceof Array) {
+                object.material.forEach(function(m){
+                    m.color = new THREE.Color(scale(Math.random()).hex())
+                    if(m.name.indexOf("building") === 0) {
+                        m.emissive = new THREE.Color(0x444444)
+                        m.transparent = true
+                        m.opacity = 0.8
+                    }
+                })
+            }else{
+                object.material.color = new THREE.Color(scale(Math.random()).hex())
+                if(object.material.name.indexOf("building") == 0){
+                    object.material.emissive = new THREE.Color(0x444444)
+                    object.material.transparent = true
+                    object.material.opacity = 0.8
+                }
+            }
+        }
+    }
 }
