@@ -160,3 +160,23 @@ export function setRandomColors(object,scale) {
         }
     }
 }
+
+export function addEarth(scene){
+    var textureLoader = new THREE.TextureLoader()
+    var planetMaterial = new THREE.MeshPhongMaterial({
+        map:textureLoader.load("/daodao-knowledge/textures/earth/Earth.png"),
+        normalMap:textureLoader.load("/daodao-knowledge/textures/earth/EarthNormal.png"),
+        specularMap:textureLoader.load("/daodao-knowledge/textures/earth/EarthSpec.png"),
+        specular:new THREE.Color(0x4444aa),
+        normalScale:new THREE.Vector2(6,6),
+        shininess:0.5
+    })
+
+    var earth = new THREE.Mesh(new THREE.SphereGeometry(15,40,40),planetMaterial)
+    scene.add(earth)
+    var pivot = new THREE.Object3D()
+    initDefaultLighting(pivot)
+    scene.add(pivot)
+
+    return {earth:earth,pivot:pivot}
+}
