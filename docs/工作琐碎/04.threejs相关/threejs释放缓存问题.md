@@ -181,6 +181,7 @@ dispose(){
     renderer.dispose();
     renderer.forceContextLoss();
     renderer.renderLists.dispose();
+    this.$refs.scene.removeChild(renderer.domElement)
     renderer.domElement = null;
     THREE.Cache.clear();
     orbitControls.dispose ()
