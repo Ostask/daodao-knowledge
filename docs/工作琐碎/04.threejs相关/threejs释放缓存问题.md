@@ -1,0 +1,234 @@
+---
+title: threejs释放缓存问题
+date: 2021-05-25 11:42:45
+permalink: /pages/1d8f2d/
+categories:
+  - 工作琐碎
+  - threejs相关
+tags:
+    -
+---
+最近呢，我们公司要我做一个上传三维模型并且可以在场景里移动模型，并且在场景里布上各种测点的功能，这个页面是vue写的，有个问题至今也没有解决，就是**每次切进切出这个页面，内存占用就蹭蹭蹭的往上涨，直到最后卡死**，到目前为止这个问题我还没有真正的解决，只能说是目前只做到了大概不影响使用的状况，但是我仍未得知，那些释放不掉的缓存到底在哪里，是些什么，怕我忘了，把探索过程记录一下。
+
+大概呢，就是做这么个界面：
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525114512.png)
+
+而内存呢：
+
+- 第一次打开前：
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525121351.png) 53%
+- 第一次打开页面后：
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525121516.png) 67%  
+离开页面后内存没有什么变化
+
+- 第二次打开后：
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525121628.png) 72%
+
+重复操作几次之后妥妥的页面就崩溃了。
+
+## 找到原因
+原因我很快在`threejs`官网上查到了：
+<a href="https://threejs.org/docs/index.html#manual/zh/introduction/How-to-dispose-of-objects">如何废置对象</a>  
+
+简要的说明就是：  
+ 每当你创建一个three.js中的实例时，都会分配一定数量的内存。然而，three.js会创建在渲染中所必需的特定对象，例如几何体或材质，以及与WebGL相关的实体，例如buffers或着色器程序。但是这些对象并不会被自动释放；应用程序必须使用特殊的API来释放这些资源。
+
+### 废置几何体
+
+几何体常用来表示定义为属性集合的顶点信息，`three.js`在内部为每一个属性创建一个`WebGLBuffer`类型的对象。 这些实体仅有在调用`BufferGeometry.dispose()`的时候才会被删除。 如果应用程序中的几何体已废弃，请执行该方法以释放所有相关资源。
+
+### 废置材质
+
+材质定义了物体将如何被渲染。`three.js`使用材质所定义的信息来构造一个着色器程序，以用于渲染。 着色器程序只有在相应材质被废置后才能被删除。由于性能的原因，`three.js`尽可能尝试复用已存在的着色器程序。 因此，着色器程序只有在所有相关材质被废置后才被删除。 你可以通过执行`Material.dispose()`方法来废置材质。
+
+### 纹理
+
+对材质的废置不会对纹理造成影响。它们是分离的，因此一个纹理可以同时被多个材质所使用。 每当你创建一个`Texture`实例的时候，`three.js`在内部会创建一个`WebGLTexture`实例。 和`buffer`相似，该对象只能通过调用`Texture.dispose()`来删除。
+
+### 渲染目标
+
+`WebGLRenderTarget`类型的对象不仅分配了`WebGLTexture`的实例， 还分配了`WebGLFramebuffer`和`WebGLRenderbuffer`来实现自定义渲染目标。 这些对象仅能通过执行`WebGLRenderTarget.dispose()`来解除分配。
+
+### 杂项
+
+有一些来自`examples`目录的类，例如控制器或者后期处理过程，提供了`dispose()`方法以用于移除内部事件监听器或渲染目标。 通常来讲，非常建议查阅类的`API`或者文档，并注意`dispose()`函数。如果该函数存在的话，你应当在清理时使用它。 
+
+### 如何判断缓存被释放了
+可以评估`WebGLRenderer.info` —— 渲染器中的一个特殊属性，具有一系列关于显存和渲染过程的统计信息。 除此之外，它还告诉你有多少纹理、几何体和着色器程序在内部存储。 如果你在你的应用程序中注意到了性能问题，一个较好的方法便是调试该属性，以便轻松识别内存泄漏。 
+
+## 开始尝试
+
+根据官网介绍，我的代码最开始写成这个样子：
+```js
+//在 beforeDestroy 钩子中调用
+
+
+removeModel(group) {
+    if(!group){
+        return false
+    }
+    group.traverse(function (item) {
+        if (item instanceof THREE.Mesh) {
+            item.geometry.dispose(); //删除几何体
+            item.material && item.material.dispose && item.material.dispose(); //删除材质
+            scene.remove(group)
+        }
+    });
+}
+```
+
+这段代码写并没有起到什么作用。
+
+总结一下这次踩到的坑： 
+
+**不要在`traverse`中`remove`:  
+遍历第一次的时候，就已经`remove`掉了，根本就是遍历了个寂寞**
+
+然后我把代码改了一下：
+```js {11}
+removeModel(group) {
+    if(!group){
+        return false
+    }
+    group.traverse(function (item) {
+        if (item instanceof THREE.Mesh) {
+            item.geometry.dispose(); //删除几何体
+            item.material && item.material.dispose && item.material.dispose(); //删除材质
+        }
+    });
+    scene.remove(group)
+}
+```
+然后打印一下`renderer.info`：
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525124010.png)
+发现还有1个geometries和42个textures没有释放掉
+
+我怀疑是没有遍历到，然后放弃了使用traverse，改成自己写递归：
+```js
+removeModel(parent,child){
+    if(child.children.length){
+        let arr  = child.children.filter(x=>x);
+        arr.forEach(a=>{
+            this.removeModel(child,a)
+        })
+    }
+    if(child instanceof THREE.Mesh||child instanceof THREE.Line){
+        if(child.material.map) child.material.map.dispose();
+        child.material.dispose();
+        child.geometry.dispose();
+    }else if(child.material){
+        child.material.dispose();
+    }
+    child.remove();
+    if(parent) {
+        parent.remove(child);
+    }
+}
+```
+然后再打印renderer.info:  
+![](https://cdn.JsDelivr.net/gh/Ostask/img-bed//20210220210525124316.png)  
+这次果然少了一些，但是还是有一些没有清掉
+
+观察到天空的背景我是这样加载的：
+```js {10}
+var cubeTextureLoader = new THREE.CubeTextureLoader();
+cubeTextureLoader.setPath( '/static/skybox/' );
+
+var cubeTexture = cubeTextureLoader.load( [
+    "px1.jpg", "nx1.jpg",
+    "py1.jpg", "ny1.jpg",
+    "pz1.jpg", "nz1.jpg"
+] );
+
+scene.background = cubeTexture;
+```
+
+所以scene的background还没有清除：
+```js
+scene.background.dispose()
+```
+果然没有清除的材质变成了19个，又少了一个（清除到19个的时候我就再也清不动了不知道这19个是什么）
+
+然后将OrbitContril和TransformControl都注销掉
+```js
+orbitControls.dispose ()
+transformControl.dispose ()
+```
+
+然后根据网上大佬的博客，再来注销renderer：（有的我也不是很理解）
+```js
+//处理当前的渲染环境
+renderer.dispose();
+//模拟WebGL环境的丢失。
+renderer.forceContextLoss();
+//在内部用于处理场景渲染对象的排序注销
+renderer.renderLists.dispose();
+//renderer的渲染容器删除
+renderer.domElement = null;
+//释放renderer变量的内存
+renderer = null;
+//清除所有缓存中的值。
+THREE.Cache.clear();
+```
+
+如此一番操作之后，多打开几次页面内存居然保持着一个相对动态的平衡。。但是那19个texture我是真找不出来了。。项目时间不够了，日后有方法了再来记录。
+
+## 完整版代码
+```js
+dispose(){
+    this.removeModel(null,scene)
+    scene.background.dispose()
+    renderer.dispose();
+    renderer.forceContextLoss();
+    renderer.renderLists.dispose();
+    renderer.domElement = null;
+    THREE.Cache.clear();
+    orbitControls.dispose ()
+    transformControl.dispose ()
+    scene.remove();
+    //这些都是页面里我写的全局变量，释放一下内存
+    models = null
+    pointGroup = null
+    renderer = null;
+    scene = null
+    domEl = null
+    camera = null
+    orbitControls = null
+    transformControl = null
+    select = null
+    raycaster = null
+    mouse = null
+    tipBox = null
+    pointGroup = null
+    boxHelper = null
+    curPoint = null
+    curHoverPoint = null
+    //停止requestAnimationFrame
+    cancelAnimationFrame(this.animateId)
+    this.animateId = null
+}
+
+removeModel(parent,child){
+    if(child.children.length){
+        let arr  = child.children.filter(x=>x);
+        arr.forEach(a=>{
+            this.removeModel(child,a)
+        })
+    }
+    if(child instanceof THREE.Mesh||child instanceof THREE.Line){
+        if(child.material.map) child.material.map.dispose();
+        child.material.dispose();
+        child.geometry.dispose();
+    }else if(child.material){
+        child.material.dispose();
+    }
+    child.remove();
+    if(parent) {
+        parent.remove(child);
+    }
+}
+```
+
+
+
+
