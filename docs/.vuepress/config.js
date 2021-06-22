@@ -1,6 +1,20 @@
 const sidebar = require("./utils/getSidebarData")
 
 module.exports = {
+    head: [
+        // 添加百度统计
+        [
+            "script",
+            {},
+            `var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6371333d39195dbe958ef14c0a722ac4";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();`
+        ]
+      ],
     title: '刀刀的知识积累',
     base:'/daodao-knowledge/',
     description: '立志不再懒懒散散的小前端的知识库',
