@@ -48,7 +48,8 @@ module.exports = {
                             // {text:'vue',link:'/vue/lesson1'},
                             // {text:'react',link:'/'},
                             {text:'vuePress',link:'/pages/3ba846/'},
-                            {text:'qiankun微前端',link:'/pages/347ae3/'}
+                            {text:'qiankun微前端',link:'/pages/347ae3/'},
+                            {text:'vue3',link:'/pages/f97ef5/'}
                         ]
                     },
                     {
