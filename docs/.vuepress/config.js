@@ -67,7 +67,7 @@ module.exports = {
                     {text:'归档',link:'/archives/'},
                 ]
             },
-            { text: '大佬博客收藏', link: '/dalao/' }
+            { text: '关于我', link: '/daodao/' }
         ],
         sidebar:sidebar
     }
