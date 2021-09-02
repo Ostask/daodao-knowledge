@@ -98,7 +98,9 @@ export default {
       font-weight normal
       padding-left 2rem
       &:not(.clickable)
-        opacity 0.5
+        opacity 0.8
+        font-size:1em;
+        font-weight:600;
     & > .sidebar-group-items
       padding-left 1rem
       & > li > .sidebar-link
@@ -121,7 +123,7 @@ export default {
   margin 0
   border-left 0.25rem solid transparent
   &.open, &:hover
-    color inherit
+    color $titleColor
   .arrow
     position relative
     top -0.12em
