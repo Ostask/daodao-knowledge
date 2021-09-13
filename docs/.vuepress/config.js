@@ -13,7 +13,8 @@ module.exports = {
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
             })();`
-        ]
+        ],
+        ['link', { rel: 'icon', href: '/img/newlogo.ico' }]
       ],
     title: '刀刀的知识积累',
     base:'/daodao-knowledge/',
