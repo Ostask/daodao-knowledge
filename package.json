@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "chroma-js": "^2.1.1",
-    "three": "^0.125.2"
+    "three": "^0.132.2"
   }
 }
