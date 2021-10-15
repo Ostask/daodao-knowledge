@@ -49,6 +49,14 @@
       </div>
     </div>
 
+    <div>
+      <p>友情链接：</p>
+      <a class="card" target="_blank" href="https://julie7366.github.io/blog/">
+        <div class="title">呢呢 Blog</div>
+        <div class="text">这是个逗比又厉害的小姐姐，重点是厉害，绝对不是逗比</div>
+      </a>
+    </div>
+
     <Content class="theme-default-content custom" />
 
     <div
@@ -89,6 +97,22 @@ export default {
   max-width $homePageWidth
   margin 0px auto
   display block
+  .card{
+    display: inline-block;
+    padding:10px;
+    margin:10px 5px;
+    background: linear-gradient(to bottom right,#c7c57a, #d1c3a9);;
+    border-radius:4px;
+    .title{
+      font-size:20px;
+      margin-bottom:8px;
+      color:#fff;
+    }
+    .text{
+      font-size:12px;
+      color:#fff;
+    }
+  }
   .hero
     text-align center
     img
