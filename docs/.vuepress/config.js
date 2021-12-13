@@ -38,6 +38,7 @@ module.exports = {
                         text: '基础',
                         items:[
                             {text:'javascript',link:'/pages/600fd9/'},
+                            {text:'算法&常用方法',link:'/pages/12e2d5/'}
                             // {text:'ts',link:'/'},
                             // {text:'nodejs',link:'/'},
                             // {text:'css',link:'/'}
