@@ -28,10 +28,10 @@
         v-if="data.actionText && data.actionLink"
         class="action"
       >
-        <NavLink
+        <!-- <NavLink
           class="action-button"
           :item="actionLink"
-        />
+        /> -->
       </p>
     </header>
 
@@ -51,7 +51,7 @@
 
     <div>
       <p>友情链接：</p>
-      <a class="card" target="_blank" href="https://julie7366.github.io/blog/">
+      <a class="card" target="_blank" href="http://julie7366.gitee.io/blog/">
         <div class="title">呢呢 Blog</div>
         <div class="text">这是个逗比又厉害的小姐姐，重点是厉害，绝对不是逗比</div>
       </a>
