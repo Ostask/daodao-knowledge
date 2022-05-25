@@ -2337,6 +2337,8 @@ var hide = false;
 var hideableGuis = [];
 var GUI = function GUI( pars,domEl ) {
 
+	console.log(domEl)
+
 	var _this = this;
 	var params = pars || {};
     this.domEl = domEl ? domEl : document.body
@@ -2602,22 +2604,23 @@ var GUI = function GUI( pars,domEl ) {
 	}
 	if ( params.autoPlace ) {
 
-		if ( Common.isUndefined( params.parent ) ) {
+	//	if ( Common.isUndefined( params.parent ) ) {
 
-			if ( autoPlaceVirgin ) {
+	//		if ( autoPlaceVirgin ) {
 
 				autoPlaceContainer = document.createElement( 'div' );
 				dom.addClass( autoPlaceContainer, CSS_NAMESPACE );
 				dom.addClass( autoPlaceContainer, GUI.CLASS_AUTO_PLACE_CONTAINER );
 
+				console.log('this.domEl', this.domEl, autoPlaceContainer)
 				this.domEl.appendChild( autoPlaceContainer );
 				autoPlaceVirgin = false;
 
-			}
+	//		}
 			autoPlaceContainer.appendChild( this.domElement );
 			dom.addClass( this.domElement, GUI.CLASS_AUTO_PLACE );
 
-		}
+	//	}
 		if ( ! this.parent ) {
 
 			setWidth( _this, params.width );
