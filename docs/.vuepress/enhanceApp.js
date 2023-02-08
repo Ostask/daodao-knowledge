@@ -1,4 +1,20 @@
 export default ({ router }) => {
+
+  import('../threejs/@js/dat.gui.js').then(module => {
+  }).catch(error => {
+      console.log(error);
+  });
+
+  import('../工作琐碎/04.threejs相关/@js/dat.gui.js').then(module => {
+  }).catch(error => {
+      console.log(error);
+  });
+
+  import('three/examples/jsm/libs/tween.module.min.js').then(module => {
+  }).catch(error => {
+      console.log(error);
+  });
+
     /**
      * 路由切换事件处理
      */
