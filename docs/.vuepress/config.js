@@ -14,7 +14,8 @@ module.exports = {
             s.parentNode.insertBefore(hm, s);
             })();`
         ],
-        ['link', { rel: 'icon', href: '/img/newlogo.ico' }]
+        ['link', { rel: 'icon', href: '/img/newlogo.ico' }],
+        ['meta', { name:'referrer', content:'no-referrer'}]
       ],
     title: '刀刀的知识积累',
     base:'/daodao-knowledge/',
