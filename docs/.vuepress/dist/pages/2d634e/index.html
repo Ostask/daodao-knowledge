@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>环境搭建篇 | 刀刀的知识积累</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <script>var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6371333d39195dbe958ef14c0a722ac4";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();</script>
+    <link rel="icon" href="/daodao-knowledge/img/newlogo.ico">
+    <meta name="description" content="立志不再懒懒散散的小前端的知识库">
+    <meta name="referrer" content="no-referrer">
+    
+    <link rel="preload" href="/daodao-knowledge/assets/css/0.styles.baff37af.css" as="style"><link rel="preload" href="/daodao-knowledge/assets/js/app.4258478e.js" as="script"><link rel="preload" href="/daodao-knowledge/assets/js/7.6de88e70.js" as="script"><link rel="preload" href="/daodao-knowledge/assets/js/58.419843e0.js" as="script"><link rel="prefetch" href="/daodao-knowledge/assets/js/1.11c454db.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/10.8973f190.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/100.0adc5800.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/101.113e5f80.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/102.2aa78021.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/103.7ace6026.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/104.99b6dc24.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/105.8747e6b8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/106.64e6c34d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/107.f9c6eabb.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/108.795cc1a7.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/109.58862e0f.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/11.d236f628.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/110.b7de1be8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/111.3e1e6d34.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/112.7dc0987a.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/113.5070c411.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/114.38e088f5.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/115.0787bce0.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/116.3741f01e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/117.d1745453.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/118.4b671625.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/119.cda044c4.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/12.0120b136.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/120.e0b9b581.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/121.e4772723.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/122.c7b91f8d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/123.f7fa7147.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/124.de2f7fa4.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/125.566a93c9.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/126.d47059a1.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/127.c14e0122.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/13.b512d376.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/14.e979cc1c.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/15.9f062a80.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/16.1a7ae41b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/17.44ad519e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/18.6fb9d0a2.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/19.c878a525.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/2.cff8910f.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/20.ed02bc83.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/21.5e10534e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/22.5db6a325.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/23.4b0c8a46.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/24.691b0858.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/25.b4044f2b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/26.e0dc299e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/27.b4ba8b9b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/28.958930b1.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/29.2d15b947.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/3.43a31ed6.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/30.2a090648.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/31.c636b803.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/32.fa985393.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/33.f03bce32.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/34.2227e6b8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/35.e0355f15.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/36.fda5358e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/37.09e80576.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/38.674a9dd8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/39.2c7c2513.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/4.c589e543.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/40.8f65b8f2.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/41.dc4ecd7f.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/42.e7ed8a61.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/43.69394b08.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/44.9e46a283.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/45.0c096364.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/46.24e4537d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/47.1fd84713.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/48.594d8b46.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/49.159f76c4.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/5.97c89d2f.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/50.97ca9806.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/51.324f0688.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/52.7feeae11.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/53.aa17b894.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/54.ff312bdc.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/55.be9327d7.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/56.366382aa.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/57.46137c71.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/59.9afc6ff8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/60.78465b2b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/61.fb5c4f16.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/62.87ee144a.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/63.bc75d37b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/64.da1c6de5.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/65.e9d06a92.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/66.a55cab0a.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/67.1eeaa800.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/68.b86f016d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/69.fc8c486e.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/70.623f91e7.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/71.8a41c341.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/72.95a49ebc.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/73.e0dfad5d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/74.7480bb39.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/75.14a6a3c8.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/76.9e395ce0.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/77.c52cd427.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/78.2b43215d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/79.a7c4e137.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/8.3d2ab0d4.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/80.708778d5.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/81.79c939da.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/82.6b744d95.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/83.a02e249a.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/84.fe693932.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/85.7f8edc21.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/86.0973403f.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/87.634116a1.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/88.ceff6dab.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/89.c36e522a.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/9.420cee3d.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/90.76e2d3af.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/91.a26002ba.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/92.33681b1b.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/93.b0d8d55c.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/94.a5ffdbf9.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/95.4fe69fcf.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/96.067b84f5.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/97.29a36062.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/98.a9068ccf.js"><link rel="prefetch" href="/daodao-knowledge/assets/js/99.4b470570.js">
+    <link rel="stylesheet" href="/daodao-knowledge/assets/css/0.styles.baff37af.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/daodao-knowledge/" class="home-link router-link-active"><img src="/daodao-knowledge/img/home.jpg" alt="刀刀的知识积累" class="logo"> <span class="site-name can-hide">刀刀的知识积累</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/daodao-knowledge/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/600fd9/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/12e2d5/" class="nav-link">
+  算法&amp;常用方法
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/450a09/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/331c3b/" class="nav-link">
+  css
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/a5dbfb/" class="nav-link">
+  现代JavaScript库开发
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/8ea889/" class="nav-link">
+  react
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/3ba846/" class="nav-link">
+  vuePress
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/347ae3/" class="nav-link">
+  qiankun微前端
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/f97ef5/" class="nav-link">
+  vue3
+</a></li></ul></li><li class="dropdown-item"><h4>
+          webgl学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/7fb7ad/" class="nav-link">
+  threejs
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/daodao-knowledge/pages/cd2a4f/" class="nav-link">
+  零零碎碎
+</a></div><div class="nav-item"><a href="/daodao-knowledge/pages/9d1205/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><span class="title">索引</span> <span class="arrow down"></span></button> <button type="button" aria-label="索引" class="mobile-dropdown-title"><span class="title">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/daodao-knowledge/archives/" class="nav-link">
+  归档
+</a></li></ul></div></div><div class="nav-item"><a href="/daodao-knowledge/daodao/" class="nav-link">
+  关于我
+</a></div> <a href="https://github.com/Ostask/daodao-knowledge" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/daodao-knowledge/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/600fd9/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/12e2d5/" class="nav-link">
+  算法&amp;常用方法
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/450a09/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/331c3b/" class="nav-link">
+  css
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/a5dbfb/" class="nav-link">
+  现代JavaScript库开发
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/8ea889/" class="nav-link">
+  react
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/3ba846/" class="nav-link">
+  vuePress
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/347ae3/" class="nav-link">
+  qiankun微前端
+</a></li><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/f97ef5/" class="nav-link">
+  vue3
+</a></li></ul></li><li class="dropdown-item"><h4>
+          webgl学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/daodao-knowledge/pages/7fb7ad/" class="nav-link">
+  threejs
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/daodao-knowledge/pages/cd2a4f/" class="nav-link">
+  零零碎碎
+</a></div><div class="nav-item"><a href="/daodao-knowledge/pages/9d1205/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><span class="title">索引</span> <span class="arrow down"></span></button> <button type="button" aria-label="索引" class="mobile-dropdown-title"><span class="title">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/daodao-knowledge/archives/" class="nav-link">
+  归档
+</a></li></ul></div></div><div class="nav-item"><a href="/daodao-knowledge/daodao/" class="nav-link">
+  关于我
+</a></div> <a href="https://github.com/Ostask/daodao-knowledge" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> React17+Hook+TS4 最佳实践，仿 Jira 企业级项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>react+antd+react-router+redux后台管理系统</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/daodao-knowledge/pages/2d634e/" aria-current="page" class="active sidebar-link">环境搭建篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#创建react项目" class="sidebar-link">创建react项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#删除多余文件" class="sidebar-link">删除多余文件</a></li></ul></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#配置vite" class="sidebar-link">配置vite</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#alias" class="sidebar-link">alias</a></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#css" class="sidebar-link">css</a></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#server" class="sidebar-link">server</a></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#build" class="sidebar-link">build</a></li></ul></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#配置tsconfig" class="sidebar-link">配置tsconfig</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#ts报错某某模块找不到" class="sidebar-link">ts报错某某模块找不到</a></li></ul></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#env设置" class="sidebar-link">env设置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#在vite-config-ts中使用环境变量" class="sidebar-link">在vite.config.ts中使用环境变量</a></li></ul></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#package-json配置" class="sidebar-link">package.json配置</a></li><li class="sidebar-sub-header"><a href="/daodao-knowledge/pages/2d634e/#测试一下运行和打包" class="sidebar-link">测试一下运行和打包</a></li></ul></li><li><a href="/daodao-knowledge/pages/31fc53/" class="sidebar-link">整体架构篇</a></li><li><a href="/daodao-knowledge/pages/598c8f/" class="sidebar-link">一些小功能点</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="page-content hasRightNav"><div class="right-nav" data-v-58b0b819></div> <div class="article-title theme-default-content" data-v-fda27140><h1 data-v-fda27140><span class="circle" data-v-fda27140></span>环境搭建篇</h1> <div class="lastUpdatedTime" data-v-fda27140><span class="text" data-v-fda27140>更新时间:</span> 2023-03-25 12:13:30</div></div> <div class="theme-default-content content__default"><p>嚷嚷了很久的我要学react,最近终于学起来了，然后写一个小小的后台管理系统练练手，emmm。。。为什么是后台管理系统呢，因为我也不知道写啥好，另外项目用了ts，但是我的ts真的很烂，本意也只是想做笔记防止自己忘记了，所以大家如果真的看了我的笔记和我的烂代码，不要打我啊。</p> <h2 id="创建react项目"><a href="#创建react项目" class="header-anchor">#</a> 创建react项目</h2> <p>这个项目我使用vite构建，所以 <a href="https://cn.vitejs.dev/guide/" target="_blank" rel="noopener noreferrer">vite官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 在此
+<img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325142734.png" alt=""><br>
+根据官方文档，我们运行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm create vite@latest
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>起好自己的项目名字，然后选react<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/c1a11381848621d1a6bf855d6de7a62.png" alt=""></p> <p>嘿，我就是要用ts,所以选typescript，当然你可以不选<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/a45f7f19acf2839db61cb9dc9b47171.png" alt=""></p> <p>成功拉：<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/3cd7210f3645b27963234f8d48bac46.png" alt=""></p> <p>然后启动项目</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install
+npm run dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20c50bde558ed55ca5d90986499d776.png" alt=""><br>
+不错不错值得表扬</p> <h3 id="删除多余文件"><a href="#删除多余文件" class="header-anchor">#</a> 删除多余文件</h3> <p>不过这里面很多文件都是不需要的，我们把它删掉，现在是删除之后的目录<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325145055.png" alt=""></p> <p>然后修改App.tsx</p> <div class="language-tsx line-numbers-mode"><pre class="language-tsx"><code><span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">App</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>修改main.tsx,去掉严格模式（严格模式我觉得挺烦的）</p> <div class="language-tsx line-numbers-mode"><pre class="language-tsx"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom/client'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">createRoot</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> HTMLElement<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="配置vite"><a href="#配置vite" class="header-anchor">#</a> 配置vite</h2> <h3 id="alias"><a href="#alias" class="header-anchor">#</a> alias</h3> <p>开发的时候写一堆'./ ../'体验很不好，非常糟心，所以配一下别名，vite文档截图如下：<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325160204.png" alt=""><br>
+这里必须要使用绝对路径，因此在<code>vite.config.ts</code>引入<code>path</code>
+在<code>node</code>中，可以使用<code>__dirname</code>变量获取当前模块文件所在目录的完整绝对路径,完整配置如下</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span> ConfigEnv<span class="token punctuation">,</span> UserConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>resolve<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;path&quot;</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mode<span class="token operator">:</span> ConfigEnv<span class="token punctuation">)</span><span class="token operator">:</span>UserConfig <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token keyword">return</span> <span class="token punctuation">{</span>
+   resolve<span class="token operator">:</span> <span class="token punctuation">{</span>
+     alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+       <span class="token string-property property">'@'</span><span class="token operator">:</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&quot;./src&quot;</span><span class="token punctuation">)</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">react</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>如果此时把main.tsx中的 './App' 引用，改为'@/App'引用依然会报错<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325162332.png" alt=""><br>
+这是ts报的错，我们还需要把tsconfig.json改一下：</p> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    <span class="token comment">//baseUrl用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响</span>
+    <span class="token property">&quot;baseUrl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">//paths用于设置模块名到基于baseUrl的路径映射</span>
+    <span class="token property">&quot;paths&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">&quot;@/*&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;src/*&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>现在就不报错了.</p> <h3 id="css"><a href="#css" class="header-anchor">#</a> css</h3> <p>这个项目我使用less,根据vite文档<br> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325164344.png" alt=""><br>
+因此直接将less装上就行了</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm i -D less
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后在main.tsx中引入reset.less,具体样式就不赘述了，reset基本都大同小异。</p> <h3 id="server"><a href="#server" class="header-anchor">#</a> server</h3> <p><a href="https://cn.vitejs.dev/config/server-options.html" target="_blank" rel="noopener noreferrer">关于server的文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mode<span class="token operator">:</span> ConfigEnv<span class="token punctuation">)</span><span class="token operator">:</span>UserConfig <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token keyword">return</span> <span class="token punctuation">{</span>
+   <span class="token comment">//...</span>
+   server<span class="token operator">:</span> <span class="token punctuation">{</span>
+     host<span class="token operator">:</span> <span class="token string">&quot;0.0.0.0&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 指定服务器应该监听哪个 IP 地址。 如果将此设置为 0.0.0.0 或者 true 将监听所有地址，包括局域网和公网地址。</span>
+     port<span class="token operator">:</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token comment">//指定开发服务器端口。注意：如果端口已经被使用，Vite 会自动尝试下一个可用的端口</span>
+     proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+       <span class="token string-property property">&quot;/api&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   				target<span class="token operator">:</span> <span class="token string">&quot;https://mock.mengxuegu.com/mock/641c67b7e24b4b4cfeac9ddf&quot;</span><span class="token punctuation">,</span>
+   				changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span>
+   			<span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h3 id="build"><a href="#build" class="header-anchor">#</a> build</h3> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span> ConfigEnv<span class="token punctuation">,</span> UserConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>resolve<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;path&quot;</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mode<span class="token operator">:</span> ConfigEnv<span class="token punctuation">)</span><span class="token operator">:</span>UserConfig <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+ <span class="token keyword">return</span> <span class="token punctuation">{</span>
+   <span class="token comment">//...</span>
+   build<span class="token operator">:</span> <span class="token punctuation">{</span>
+     outDir<span class="token operator">:</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 指定输出路径（相对于 项目根目录).</span>
+     minify<span class="token operator">:</span> <span class="token string">&quot;esbuild&quot;</span><span class="token punctuation">,</span>  <span class="token comment">//设置为 false 可以禁用最小化混淆，或是用来指定使用哪种混淆器。默认为 Esbuild，它比 terser 快 20-40 倍，压缩率只差 1%-2%</span>
+     rollupOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+       output<span class="token operator">:</span> <span class="token punctuation">{</span>
+           chunkFileNames<span class="token operator">:</span> <span class="token string">&quot;js/[name]-[hash].js&quot;</span><span class="token punctuation">,</span>
+           entryFileNames<span class="token operator">:</span> <span class="token string">&quot;js/[name]-[hash].js&quot;</span><span class="token punctuation">,</span>
+           assetFileNames<span class="token operator">:</span> <span class="token string">&quot;[ext]/[name]-[hash].[ext]&quot;</span>
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>关于rollupOptions的配置需要参考 <a href="https://www.rollupjs.com/guide/big-list-of-options" target="_blank" rel="noopener noreferrer">rollup文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325184744.png" alt=""> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325185513.png" alt=""> <img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/20230325185653.png" alt=""><br>
+现在可以运行<code>npm run build</code>测试一下打包,public目录下的文件会原样复制到根目录中。</p> <h2 id="配置tsconfig"><a href="#配置tsconfig" class="header-anchor">#</a> 配置tsconfig</h2> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+ <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token property">&quot;target&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ESNext&quot;</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;useDefineForClassFields&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;lib&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;DOM&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;DOM.Iterable&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ESNext&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;allowJs&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;skipLibCheck&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;esModuleInterop&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;allowSyntheticDefaultImports&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;strict&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;forceConsistentCasingInFileNames&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;module&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ESNext&quot;</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;moduleResolution&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Node&quot;</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;resolveJsonModule&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;isolatedModules&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;noEmit&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+   <span class="token property">&quot;jsx&quot;</span><span class="token operator">:</span> <span class="token string">&quot;react-jsx&quot;</span><span class="token punctuation">,</span>
+   <span class="token comment">//baseUrl用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响</span>
+   <span class="token property">&quot;baseUrl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./&quot;</span><span class="token punctuation">,</span>
+   <span class="token comment">//paths用于设置模块名到基于baseUrl的路径映射</span>
+   <span class="token property">&quot;paths&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+     <span class="token property">&quot;@/*&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;src/*&quot;</span><span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">//指定要编译的路径列表</span>
+ <span class="token property">&quot;include&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;src&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+ <span class="token comment">//表示要排除的，不编译的文件</span>
+ <span class="token property">&quot;exclude&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;node_modules&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;dist&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;**/*.js&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="ts报错某某模块找不到"><a href="#ts报错某某模块找不到" class="header-anchor">#</a> ts报错某某模块找不到</h3> <p><img src="https://daodaoblogpicgo.oss-cn-shanghai.aliyuncs.com/img/0eb259d2cc4691679d981a3ddcd5070.png" alt=""><br>
+这里ts报错说找不到path，path是node模块，所以我们安装一下@types/node,一般ts报错的时候会提示要安装什么，只需要按照提示来就行了</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install @types/node -D
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="env设置"><a href="#env设置" class="header-anchor">#</a> env设置</h2> <p>Vite 使用 dotenv 从你的 环境目录 中的下列文件加载额外的环境变量：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>.env                # 所有情况下都会加载
+.env.local          # 所有情况下都会加载，但会被 git 忽略
+.env.[mode]         # 只在指定模式下加载
+.env.[mode].local   # 只在指定模式下加载，但会被 git 忽略
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>加载的环境变量也会通过 import.meta.env 暴露给客户端源码。</p> <p>为了防止意外地将一些环境变量泄漏到客户端，只有以 VITE_ 为前缀的变量才会暴露给经过 vite 处理的代码。</p> <p>虽然暂时没什么好配的，不过还是有点仪式感配一下吧：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#.env
+#port
+VITE_PORT = 5000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>#.env.development
+# 本地环境
+NODE_ENV = 'development'
+
+# 本地环境接口地址
+VITE_API_URL = '/api'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>#.env.production
+# 线上环境
+NODE_ENV = &quot;production&quot;
+
+# 线上环境接口地址
+VITE_API_URL = &quot;https://mock.mengxuegu.com/mock/641c67b7e24b4b4cfeac9ddf&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>好比说我要用<code>VITE_API_URL</code>这个环境变量，只需要在代码中使用<code>import.meta.env.VITE_API_URL</code></p> <h3 id="在vite-config-ts中使用环境变量"><a href="#在vite-config-ts中使用环境变量" class="header-anchor">#</a> 在vite.config.ts中使用环境变量</h3> <p>注意 Vite 默认是不加载 .env 文件的，因为这些文件需要在执行完 Vite 配置后才能确定加载哪一个，举个例子，root 和 envDir 选项会影响加载行为。不过当你的确需要时，你可以使用 Vite 导出的 loadEnv 函数来加载指定的 .env 文件。
+因此我们来使用一下.env环境中配置的端口号：</p> <div class="language-ts line-numbers-mode"><div class="highlight-lines"><div class="highlighted"> </div><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig<span class="token punctuation">,</span> ConfigEnv<span class="token punctuation">,</span> UserConfig<span class="token punctuation">,</span> loadEnv <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>resolve<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;path&quot;</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mode<span class="token operator">:</span> ConfigEnv<span class="token punctuation">)</span><span class="token operator">:</span>UserConfig <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> env <span class="token operator">=</span> <span class="token function">loadEnv</span><span class="token punctuation">(</span>mode<span class="token punctuation">.</span>mode<span class="token punctuation">,</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token constant">VITE_PORT</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">//...</span>
+    server<span class="token operator">:</span> <span class="token punctuation">{</span>
+      host<span class="token operator">:</span> <span class="token string">&quot;0.0.0.0&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 指定服务器应该监听哪个 IP 地址。 如果将此设置为 0.0.0.0 或者 true 将监听所有地址，包括局域网和公网地址。</span>
+      port<span class="token operator">:</span> port<span class="token punctuation">,</span> <span class="token comment">//指定开发服务器端口。注意：如果端口已经被使用，Vite 会自动尝试下一个可用的端口</span>
+      proxy<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string-property property">&quot;/api&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+					target<span class="token operator">:</span> <span class="token string">&quot;https://mock.mengxuegu.com/mock/641c67b7e24b4b4cfeac9ddf&quot;</span><span class="token punctuation">,</span>
+					changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span>
+				<span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>重新启动一下，依然在5000端口。</p> <h2 id="package-json配置"><a href="#package-json配置" class="header-anchor">#</a> package.json配置</h2> <p>因为我们配好了development和production的环境变量，现在更改一下package.json的scripts：</p> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vite&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vite build --mode production&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;preview&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vite preview&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>(嚯嚯嚯，你问我为什么把tsc去掉了，因为。。老子ts太菜了 = w =)</p> <h2 id="测试一下运行和打包"><a href="#测试一下运行和打包" class="header-anchor">#</a> 测试一下运行和打包</h2> <p>现在运行一下<code>npm run dev</code>，会看到<code>http://localhost:5000</code>页面上出现App几个字，这样就代表成功。<br>
+然后运行<code>npm run build</code>,项目根目录会出现打包好的<code>dist</code>文件夹，如果没有成功的话，自己再倒回去检查一下吧。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/Ostask/daodao-knowledge/edit/master/docs/react/02.react+antd+react-router+redux后台管理系统/01.环境搭建篇.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer></div> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/daodao-knowledge/pages/e910f1/" class="prev">
+        React基础知识扫盲
+      </a></span> <span class="next"><a href="/daodao-knowledge/pages/31fc53/">
+        整体架构篇
+      </a>
+      →
+    </span></p></div>  <div class="footer">
+    MIT Licensed | Copyright © 2021-present 刀刀
+  </div></main></div><div class="global-ui"></div></div>
+    <script src="/daodao-knowledge/assets/js/app.4258478e.js" defer></script><script src="/daodao-knowledge/assets/js/7.6de88e70.js" defer></script><script src="/daodao-knowledge/assets/js/58.419843e0.js" defer></script>
+  </body>
+</html>
