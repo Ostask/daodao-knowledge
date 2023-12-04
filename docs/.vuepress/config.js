@@ -58,7 +58,8 @@ module.exports = {
                     {
                         text:'webgl学习',
                         items:[
-                            {text:'threejs',link:'/pages/7fb7ad/'}
+                            {text:'threejs',link:'/pages/7fb7ad/'},
+                            {text:'the book of shaders', link:'/pages/e77551/'}
                         ]
                     }
                 ]
