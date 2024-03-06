@@ -44,6 +44,10 @@ export default {
         position:sticky;
         top:100px;
         margin-right:-200px;
+        &:hover {
+            height: 600px;
+            overflow:auto;
+        }
         .right-menu-item{
             a{
                 color:$textColor;
