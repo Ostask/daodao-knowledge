@@ -41,7 +41,7 @@ module.exports = {
                             {text:'JavaScript',link:'/pages/600fd9/'},
                             {text:'算法&常用方法',link:'/pages/12e2d5/'},
                             {text:'TypeScript',link:'/pages/450a09/'},
-                            {text:'css',link:'/pages/331c3b/'},
+                            {text:'css',link:'/pages/ffc1d9/'},
                             {text:'现代JavaScript库开发',link:'/pages/a5dbfb/'}
                         ]
                     },
