@@ -64,6 +64,12 @@ module.exports = {
                     }
                 ]
             },
+            {
+                text: '后端学习',
+                items: [
+                    {text:'python', link:'/pages/437984/'}
+                ]
+            },
             { text: '零零碎碎',link:'/pages/cd2a4f/'},
             { text: '随记', link: '/pages/9d1205/' },
             {text: '索引',
