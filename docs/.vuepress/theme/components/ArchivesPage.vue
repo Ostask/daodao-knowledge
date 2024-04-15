@@ -5,7 +5,7 @@
         <div class="wrapper">
             <!-- 循环出归档的列表 -->
             <div class="year-content" v-for="yearobj in list">
-                <div class="year">{{yearobj.year}}</div>
+                <div class="year" v-show="yearobj.year">{{yearobj.year}}({{yearobj.articles.length}}篇)</div>
                 <div class="list-wrapper">
                     <router-link tag="li" :to="item.path" v-for="item in yearobj.articles" class="article">
                         <span class="time">{{item.time}}</span>{{item.title}}
